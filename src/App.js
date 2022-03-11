@@ -34,7 +34,7 @@ function App() {
         }
 
       })
-console.log(12);
+
   }, [])
   if (!isApi) return <div>Loading</div>
 
