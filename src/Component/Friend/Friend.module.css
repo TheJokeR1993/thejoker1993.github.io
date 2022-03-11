@@ -1,0 +1,85 @@
+
+.header{
+    display: flex;
+    justify-content: space-around;
+}
+.aa{
+    color: blue;
+    margin: 2px 4px;
+    cursor: pointer;
+    border: 1px solid black;
+    padding: 0px 4px;
+}
+
+.userMain{
+    margin: 15px 10px;
+    border-radius: 10px;
+    overflow-y: auto;
+    overflow-x:hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    box-shadow: 0 0 4px 3px black;
+}
+
+.userCard{
+    border-radius: 10px;
+    box-shadow: 0 0 4px  black;
+    margin: 10px 0px;
+    border:1px solid black;
+    color: black;
+    flex: 0 0 45%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.userCard img{
+    border:1px solid black;
+    max-width: 35%;
+    border-radius: 10px;
+    margin: 5px 0;
+}
+
+.userCardinfo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.navname{
+    color: black;
+    font-size: 19px;
+    margin: 10px 0px 15px;
+    max-width: 110%;
+    overflow-x: hidden;
+}
+.userCardinfo button{
+    text-transform: uppercase;
+    padding: 4px 8px;
+    border-radius: 5px;
+   cursor: pointer;
+    background-color: rgb(172, 172, 255);
+}
+
+
+.pagediv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page{
+    color: blue;
+    margin: 2px;
+    padding: 2px 4px;
+}
+.activepage{
+    margin: 2px;
+    padding: 2px 4px;
+    font-weight: bold;
+    border-bottom: 1px solid black
+}

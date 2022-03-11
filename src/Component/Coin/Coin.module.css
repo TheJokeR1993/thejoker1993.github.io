@@ -1,0 +1,117 @@
+.header{
+    padding: 20px;
+    height: 80vh;
+}
+.headerSelect{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    margin: 10px;
+    border: 2px solid black;
+
+}
+.headerSelect select{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px
+}
+
+.rezult{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card{
+    border: 2px solid black;
+    
+    padding: 10px;
+   
+    max-width:300px;
+    box-shadow: 0px 0px 9px black;
+    border-radius: 10px;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+.cardClose{
+    position: absolute;
+    top:-2px;right: -1px;
+    background-color: rgb(236, 85, 85);
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+    height: 25px;
+}
+.card_header{
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 15px ;
+    
+    margin-bottom: 5px;
+}
+.card_header img{
+    height: 70px;
+    width: 70px;
+}
+.card_header h2{
+    
+    margin: 0;
+    text-align: center;
+    margin-right: 0px 5px;
+    overflow: hidden;
+}
+.cardMain{
+ 
+    display: flex;
+    flex-direction: column;
+}
+
+.cardMain p {
+    overflow-y: auto;
+    height: 180px;
+    margin: 0;
+    padding: 5px;
+    
+ 
+}
+
+.cardMain h3{
+    margin: 0;
+    margin-top: 10px;
+    text-align: center;
+    color: green;
+  
+}
+
+.itemDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue{
+    color:blue
+}
+.red{
+    color:red
+}
+.green{
+    color:green
+}
+
+.itemDiv img{
+    border:1px solid black;
+    box-shadow: 0px 0px 8px 1px black;
+}
+.itemDiv p{
+    padding: 5px 10px;
+}
+
+.itemDate{
+    display: flex;
+    justify-content: space-around;
+}

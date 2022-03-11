@@ -1,0 +1,90 @@
+*{
+    text-decoration: none;
+}
+
+.header {
+    background-color: rgb(179, 174, 190);
+    display: flex;
+    justify-content: space-around;
+    height: 5vh;
+}
+.header_list{
+    align-self: center;
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 20px;
+}
+.header_list:hover{
+    color: white;
+ 
+}
+.login{
+    height: 30px;
+    opacity: 0.3;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.LoGin{
+    margin-top: 50px;
+    top: 100px;
+    margin-left: 100%;
+    height: 150px;
+    width:300px;
+    outline: none;
+    background-color: rgb(194, 194, 199);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transform: translateX(-300px);
+}
+.loginUser{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    height: 100%;
+    padding: 5px 15px;
+}
+
+.loginUser input{
+   margin-bottom: 10px;
+   text-align: center;
+}
+
+.loginBtn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.Registration{
+    width: 100%;
+    height: 100vh;
+    
+}
+.user{
+    
+    height: 100%;
+    min-width: 60px;
+    
+}
+.userdiv{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    
+}
+
+
+
+.user p{
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    margin-right: 10px;
+}
+
