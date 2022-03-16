@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import './App.css';
 import Header from './Component/Header/Header'
 import MainComponent from "./Component/Main_component";
-import ContextUser from "./contextUser";
+import ContextUser from "./ContextUser";
 import ApiGl from './apy/apySocial'
 
 import token from './localData/LocalData'

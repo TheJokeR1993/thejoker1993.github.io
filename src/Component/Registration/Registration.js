@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import ContextUser from "../../contextUser";
+import ContextUser from "../../ContextUser";
 import {User} from '../../Local/Local'
 import C from './Registration.module.css'
 import * as Validator from 'validatorjs';
@@ -21,6 +21,7 @@ const rules = {
 }
 
 const Registration =(props)=>{
+    console.log(User);
     const [formT,setFormT]= useState(form)
     const[error,setError]=useState('')
     const[divError,setDivError]=useState({display:'none'})

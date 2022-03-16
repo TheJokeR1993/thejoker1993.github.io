@@ -1,5 +1,5 @@
 import React, {  useContext, useState } from "react";
-import ContextUser from '../../contextUser'
+import ContextUser from '../../ContextUser'
 import Modal from 'react-modal';
 import C from './Header.module.css'
 import ModalSwitch from "../ModalSwitch/ModalSwitch";

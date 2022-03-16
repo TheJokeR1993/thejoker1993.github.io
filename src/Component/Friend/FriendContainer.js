@@ -36,7 +36,7 @@ const FriendContainer =(props)=>{
     const [arrUseres, setArrUsers] = useState([])
     const [term,setTerm]= useState('')
   const params = props.match.params
-console.log(term);   
+ 
 
     useEffect(function(){
         setSpiner(true)

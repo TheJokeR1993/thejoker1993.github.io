@@ -42,8 +42,14 @@ const instos = axios.create({
         e.id = id
         return e
     }),
+        
 }
-
+    const profile_status ={
+        get: (id)=> instos.get(`profile/status/${id}`)
+        .then(errorF),
+        put: (status)=> instos.put(`profile/status`,{status:status})
+        .then(errorF)
+    }
  const follow = {
     get : (id)=> instos.get(`follow/${id}`)
     .then(errorF)
@@ -65,7 +71,8 @@ return {
     auth,
     profile,
     users,
-    token
+    token,
+    profile_status
 }
 
 }

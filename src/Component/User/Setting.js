@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react"
-import ContextUser from "../../contextUser"
+import ContextUser from "../../ContextUser"
 import C from './Setting.module.css'
 import * as Validator from 'validatorjs';
 import { NavLink, Route, Switch } from "react-router-dom"

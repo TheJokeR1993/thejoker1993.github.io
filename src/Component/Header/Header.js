@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import '../../App.css'
 import C from './Header.module.css'
-import ContextUser from "../../contextUser";
+import ContextUser from "../../ContextUser";
 import UserIn from './UserIn'
 
 

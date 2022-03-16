@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react'
 import C from '../Header/Header.module.css'
-import {User} from '../../Local/Local'
-import contextUser from '../../contextUser'
+import contextUser from '../../ContextUser'
 import token from '../../localData/LocalData'
 import {api} from '../../App'
 const user = {

@@ -10,19 +10,16 @@ const Friend = (props) => {
     const [selected, setSelected] = useState(props.limit)
     const [redirect,setredirect] = useState(false)
     const [inputChange,setInputChange]=useState(null)
-
     const RedirectNewLimit = e =>{
         setSelected(e.target.value)
         
         setredirect(true)
     }
     if(redirect) return <Redirect to={`/Friend/${selected}/1`} />
-const searc =()=>{
 
-}
     return <div>
-        <select onChange={RedirectNewLimit}>
-            {option.map(item=><option value={item}  key={item}  selected={item===+props.limit} >{item}</option>
+        <select onChange={RedirectNewLimit} value ={props.limit} >
+            {option.map(item=><option value={item}  key={item}   >{item}</option>
             )}
         </select>
         <div className={C.header}>

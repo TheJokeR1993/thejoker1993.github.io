@@ -1,35 +1,28 @@
 
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import {generate as id} from 'shortid'
 import Creat from './Creat/Creat'
 import Items from './Items/Items'
-const list = [
-    { value: "Pants", id: id(), packed: false, filter: false},
-    { value: "Jacket", id: id(), packed: false, filter: false},
-    { value: "iPhone Charger", id:id(), packed: false, filter: false},
-    { value: "MacBook", id:id(), packed: false, filter: false},
-    { value: "Sleeping Pills", id:id(), packed: true, filter: false},
-    { value: "Underwear", id:id(), packed: false, filter: false},
-    { value: "Hat", id:id(), packed: false, filter: false},
-    { value: "T-Shirts", id:id(), packed: false, filter: false},
-    { value: "Belt", id:id(), packed: false, filter: false},
-    { value: "Passport", id:id(), packed: true, filter: false},
-    { value: "Sandwich", id:id(), packed: true, filter: false}
-  ];
+import {R_F_change_packed} from '../../redux/reducerTodo/reducerTodo'
+import {R_F_delete_packed} from '../../redux/reducerTodo/reducerTodo'
 
 
 
-const Todo =()=>{
+const Todo =(props)=>{
+    console.log(props);
 const firstInput = 'First'
-const [allList,setAllList]=useState(list)
+const [allList,setAllList]=useState(props.todo)
 const addNewTodo =value=>setAllList([...allList,{ value, id:id(), packed: false, filter: false}])
-const changeChekedTodo= id=>{
- setAllList(
-     allList.map(i=>{
-     if(i.id===id) {i.packed = !i.packed} 
-     return i
- }))
-} 
+
+// const changeChekedTodo= id=>{
+// props.change_packed(id)
+// //  setAllList(
+// //      allList.map(i=>{
+// //      if(i.id===id) {i.packed = !i.packed} 
+// //      return i
+// //  }))
+// } 
 
  function changeNameTodo (id,arg){
     setAllList(
@@ -43,10 +36,33 @@ const changeChekedTodo= id=>{
  }
  
 
-const deletedTodo = id =>setAllList(allList.filter(i=>i.id !== id))
+// const deletedTodo = id =>setAllList(allList.filter(i=>i.id !== id))
     return <div>
         <Creat first={firstInput} addNewTodo={addNewTodo} lists={allList} setAllList={setAllList} />
-        <Items lists={allList} changeNameTodo={changeNameTodo} changeChekedTodo={changeChekedTodo} deletedTodo={deletedTodo}/>
+        <Items lists={props.todo} changeNameTodo={changeNameTodo} changeChekedTodo={props.R_F_change_packed} deletedTodo={props.R_F_delete_packed}/>
     </div>
 }
-export default Todo
+
+
+
+
+const mapStateToProps = (state)=>{
+    return {
+        todo : state.todo,
+    }
+}
+// const mapDispatchToProps =(dispatch)=>{
+//     return {
+//         change_packed : (id) =>{
+//             dispatch(R_F_change_packed(id))
+//         },
+//         delete_packed : (id)=>{
+//             dispatch(R_F_delete_packed(id))
+//         },
+//     }
+// }
+
+// export default Todo
+export default connect(mapStateToProps,{R_F_delete_packed,R_F_change_packed})(Todo)
+
+

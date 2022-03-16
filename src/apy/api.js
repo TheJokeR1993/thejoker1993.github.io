@@ -1,7 +1,7 @@
 import axios from 'axios';
 const errorF =respon=>respon.status===200?respon.data:Promise.reject(respon)
 const instos = axios.create({
-    baseURL:'https://api.coingecko.com/api/v3/'
+    baseURL:'https://api.coingecko.com/api/v3/',
 })
 
 export  const  coin = {
