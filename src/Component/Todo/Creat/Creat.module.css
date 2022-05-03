@@ -1,11 +1,14 @@
+
 .header{
     padding:20px;
     width: 100%;
     font-size: 30px;
+    margin-top: 5vh;
     display: flex;
     justify-content: center;
 }
 .header_inp{
+    width: 200px;
     margin-right: 30px;
     border: 3px solid black;
     padding: 3px;
@@ -13,7 +16,15 @@
     
 }
 
-
+.error_div{
+    background: red;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black;
+}
 
 .header_btn{
     cursor: pointer;
@@ -21,4 +32,5 @@
     background-color: rgb(179, 174, 190);
     border-radius: 7px;
     font-weight: 600;
+    min-width: 95px;
 }

@@ -1,9 +1,9 @@
-const time = {
-    day : 86400,
-    mounth : 2629743,
-    year : 31556926 
+// const time = {
+//     day : 86400,
+//     mounth : 2629743,
+//     year : 31556926 
 
-}
+// }
 const d= new Date()
 const checkZoro=(arg)=> arg<10 ? '0'+arg:arg
 
@@ -17,9 +17,10 @@ export const getUnixfoDate = (arg)=>{
 
 
 export const getDateFromTo = (arg)=>{
+
           return {
-        to:d.getFullYear()+'-'+checkZoro(d.getMonth())+'-' + checkZoro(d.getDate()) ,
-        from : d.getFullYear()-1+'-'+checkZoro(d.getMonth())+'-' + checkZoro(d.getDate()) 
+        to:d.getFullYear()+'-'+checkZoro(d.getMonth()+1)+'-' + checkZoro(d.getDate()) ,
+        from : d.getFullYear()-1+'-'+checkZoro(d.getMonth()+1)+'-' + checkZoro(d.getDate()) 
     }
     
     // return {
@@ -48,22 +49,5 @@ export const  getDateUNIX = ({from,to})=>{
     }
 
 }
-console.log();
 
 
-const t = {
-    max : 10,
-    min:15
-}
-
-
-
-const fun= (t)=>{
-  if(t.max<t.min) {
-      let a= t.max
-      t.max=t.min
-      t.min= a
-  }
-}
-fun(t)
-console.log(t);

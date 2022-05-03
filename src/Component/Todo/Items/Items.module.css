@@ -34,9 +34,8 @@
 
 .form{
     display: flex;
-    padding: 10px;
     align-items: center;
-    
+   justify-content: space-around;
     border-bottom: 2px solid black;
    margin-bottom: 10px;
 }
@@ -54,23 +53,21 @@
 }
 
 .form button {
-    align-self: stretch;
     cursor: pointer;
     background-color: rgb(253, 77, 77);
     border-radius: 5px;
     font-size: 20px;
     padding: 3px 9px;
-    text-transform: uppercase;
-    
-    
-    
+    text-transform: uppercase;  
 }
-.form p{
+.name{
     text-align: center;
-    flex-grow: 1;
+    width: 60%;
+   white-space: normal;
+    
 }
 .form  input[type='text']{
-    width: 80%;
+    width:60%;
     text-align: center;
-    height: 100%;
+    
 }

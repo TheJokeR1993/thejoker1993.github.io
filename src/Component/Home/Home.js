@@ -12,7 +12,7 @@ const Home = (props) => {
     const [isShowInput,setShowInput] = useState(true)
     const [change,setChange] = useState('')
     const context = useContext(ContextUser).hook
-    let userId = props.match.params.id;
+    const userId = props.match.params.id;
 
     const get_status=(arg)=>{
         api.profile_status.get(arg)
@@ -32,14 +32,14 @@ const Home = (props) => {
                     .finally(() => setSpiner(false))
             })
             
-        }, [props.match.params.id])
+        }, [userId])
         
         const changetatus = ()=>{
            if(+user.id !== context.id)  return
             setShowInput(false)
         }
         if(!userId) return <Redirect to={'/Friend'} />
-        if (spiner) return <img className={C.spiner} src="https://i.gifer.com/origin/95/95396fe4265aafabea4f81e2324dd7c0.gif" />
+        if (spiner) return <img alt="" className={C.spiner} src="https://i.gifer.com/origin/95/95396fe4265aafabea4f81e2324dd7c0.gif" />
        function blur_change(){
            if(status=== change) return
            api.profile_status.put(change)

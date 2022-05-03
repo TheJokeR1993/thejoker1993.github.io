@@ -4,7 +4,7 @@ const instos = axios.create({
     baseURL:'https://api.coingecko.com/api/v3/',
 })
 
-export  const  coin = {
+  const  api_coin = {
     coinsLists : ()=> instos.get('coins/list')
     .then(errorF),
     currentCoin : (id)=> instos.get('coins/'+id)
@@ -15,8 +15,6 @@ export  const  coin = {
 }
 
 
-export  default {
-    coin
-   
-}
+export  default api_coin
+
 

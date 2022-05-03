@@ -1,39 +1,164 @@
-.header{
-    padding: 20px;
-    height: 80vh;
+.main{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5vh;
+    
 }
-.headerSelect{
+.mainLeft{
+    height: 95vw;
     text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    margin: 10px;
-    border: 2px solid black;
+    margin: 10px auto;
+   position: fixed;
+   top: 5vh;
+   width: 50%;
+    border-right: 2px solid black;
 
 }
-.headerSelect select{
-    width: 100%;
+.mainInput{
+    height: 5vh;
+    margin: 0 auto;
     text-align: center;
-    padding: 10px;
-    font-size: 20px
+    
 }
+.mainInput input{
+    width: 70%;
+    padding: 4px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.error_div{
+    margin-bottom: 10px;
+}
+.error_div h2 {
+    margin: 0;
+}
+.error_inp{
+    padding: 5px;
+    border-radius: 10px;
+    background: red;
+}
+.mainAllRezult{
+    height: 83vh;
+    overflow-y: auto;
+}
+.mainAllRezult img{
+    height: 75vh;
+    width: 50vw;
+    
+}
+.mainAllRezult p{
+    cursor: pointer;
+    margin: 0;
+}
+.mainAllRezult p:hover{
+    background: black;
+    color:white;
+
+}
+
 
 .rezult{
+    width: 100%;
+    display: flex;   
+}
+.rezultLeft{
+    width: 50%;
+}
+.rezult_div{
+    width: 50%;
+}
+.rezultItem{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    justify-content: center;
+    padding: 10px 0;
+    margin-top: 5vh;
+}
+.rezult_menu{
+    position: fixed;
+    top:5vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    width: 50%;
+    height:7vh;
+    background-color: #333167;
+   
 }
 
+
+.sort_div{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+   border:2px solid black;
+   margin: 0 auto;
+   border-radius: 10px;
+   cursor: pointer;
+ text-transform: capitalize;
+ width: 90%;
+}
+.sort_div button{
+    text-transform: capitalize;
+   
+    
+    border-radius: 0px;
+    padding: 4px 3px;
+    margin: 0;
+    min-width: 20px;
+}
+.active{
+    background: greenyellow;
+    color: rgb(24, 0, 109);
+    opacity: 1;
+    font-weight: 700;
+    flex:1
+}
+.no_active{
+    opacity: 0.5;
+    flex:1
+}
+
+.sort_div button:nth-child(1){
+    padding-left: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.sort_div button:last-child{
+    opacity: 1;
+    padding-right: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sort_div button:hover{
+    background: rgb(165, 255, 30);;
+    opacity: 0.9;
+    
+}
+
+.sort_div button:last-child:hover{
+    background: red;
+}
+
+.rezultClear{
+    opacity: 0.8;
+    background: red;
+    color: white;
+    
+}
 .card{
     border: 2px solid black;
-    
     padding: 10px;
-   
-    max-width:300px;
+    width:220px;
+    
     box-shadow: 0px 0px 9px black;
     border-radius: 10px;
     margin: 10px;
     position: relative;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
 }
 .cardClose{
@@ -46,25 +171,34 @@
     height: 25px;
 }
 .card_header{
-    display: flex;
-    justify-content: space-around;
-    padding: 5px 15px ;
-    
+    font-size: 22px;
+    font-weight: bold;
     margin-bottom: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.card_text {
+    color:black;
+    width: 100%;
+    
 }
 .card_header img{
-    height: 70px;
-    width: 70px;
+    width:90px;
+    height: 90px;
+    margin-bottom: 10px;
 }
-.card_header h2{
+/* .card_header h2{
     
     margin: 0;
     text-align: center;
     margin-right: 0px 5px;
     overflow: hidden;
-}
+} */
 .cardMain{
- 
     display: flex;
     flex-direction: column;
 }
@@ -74,18 +208,30 @@
     height: 180px;
     margin: 0;
     padding: 5px;
-    
- 
+}
+.cardMain h2{
+    color: red;
+    height: 180px;
+    text-align: center;
+    align-self: center;
 }
 
 .cardMain h3{
     margin: 0;
     margin-top: 10px;
-    text-align: center;
-    color: green;
-  
+    text-align: center; 
 }
 
+
+.currentItem{
+    margin-top: 5vh;
+    padding: 20px;
+}
+
+.currentItem{
+    margin: 0 auto;
+    max-width: 1200px;
+}
 .itemDiv{
     display: flex;
     flex-direction: column;
@@ -104,6 +250,7 @@
 }
 
 .itemDiv img{
+    max-width: 25vh;
     border:1px solid black;
     box-shadow: 0px 0px 8px 1px black;
 }
@@ -115,3 +262,14 @@
     display: flex;
     justify-content: space-around;
 }
+
+.charts{
+    
+    width: 80%;
+    padding: 10px;
+    margin: 0 auto;
+  margin-top: 20px;
+  box-shadow: 0px 0px 4px 2px black;
+  border-radius: 10px;
+}
+

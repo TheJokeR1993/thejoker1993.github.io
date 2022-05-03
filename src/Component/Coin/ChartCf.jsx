@@ -1,5 +1,7 @@
 import React from 'react';
 import {getUnixfoDate}from '../../helps/date'
+import C from './Coin.module.css'
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -11,6 +13,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import { spiner } from '../../helps/spiner';
 
 ChartJS.register(
   CategoryScale,
@@ -23,18 +26,19 @@ ChartJS.register(
 );
 const ChartCf = props =>{
 
-  if(props.spiner) return <div>loading</div>
+  // if(props.spiner) return spiner('loadingd',props.width)
     // import faker from 'faker';
     
     
      const options = {
       responsive: true,
+      
       plugins: {
         legend: {
           position: 'top' ,
         },
         title: {
-          display: true,
+          display: false,
           text: 'Chart.js Line Chart',
         },
       },
@@ -50,13 +54,13 @@ const ChartCf = props =>{
           label: 'Price',
           data: props.prices.map(i=>i[1]) ,
           borderColor: 'rgb(53, 162, 235)',
-         
+          
         },
       ],
     };
     
     // export function App() {
-      return <Line options={options} data={data} />;
+      return <Line  options={options} data={data} />;
     // }
     
 }
