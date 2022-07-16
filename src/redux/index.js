@@ -15,13 +15,14 @@ const allReducers = combineReducers({
 // localStorage.getItem('i18nextLng')
 const store = createStore(allReducers,applyMiddleware(thunkMiddleware))
 
-
-setTimeout(()=>{
-    console.log(store.getState());
+// setTimeout(()=>{
+    
+//     console.log(store.getState());
+    
    store.subscribe(() => lfTodo.setItem(store.getState().todo))
    store.subscribe(() => lfCoin.setItem(store.getState().coin))
    store.subscribe(() => lfCurrent.setItem(store.getState().current))
+  
 
-
-},3000)
+// },3000)
 export default store

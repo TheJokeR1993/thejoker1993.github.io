@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
+import LogOut from './LogOut';
 import{RefreshToken } from './RefreshToken'
 
 const clientId = '544762924259-fuqm9ip9q3vq40ool8jrp1s3e3ptjc17.apps.googleusercontent.com'
@@ -19,7 +20,7 @@ return<div>
     <GoogleLogin
     clientId={clientId}
     buttonText="Login"
-    onSuccess={responseS}
+    // onSuccess={LogOut(responseS}
     onFailure={responseF}
     cookiePolicy={'single_host_origin'}
     isSignedIn={true}

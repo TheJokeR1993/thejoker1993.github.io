@@ -1,11 +1,12 @@
 import React, { useState,memo } from "react";
-import C from "./Items.module.css"
-
+import C from "../todo.module.css"
+import PropsTypes from 'prop-types'
 
 
 const Current_items =props=>{
     const [isShowInput,setIsShowInput]=useState(false)
     const [changeName,setChangeName]=useState(props.value )
+  
    const changeInput=()=>{
        
        props.changeNameTodo(props.id,changeName)
@@ -27,7 +28,18 @@ const Current_items =props=>{
     </div>
 }
 
-const getProps =(prepP,nextP)=>prepP.packed === nextP.packed && prepP.value === nextP.value && prepP.length === nextP.length 
+const getProps =(prepP,nextP)=>{
+ 
+ return prepP.packed === nextP.packed && prepP.value === nextP.value && prepP.length === nextP.length 
+
+}
+
+
+Current_items.propTypes = {
+  packed : PropsTypes.bool.isRequired,
+  value : PropsTypes.any.isRequired
+
+}
   export default memo(Current_items,getProps)
 
 

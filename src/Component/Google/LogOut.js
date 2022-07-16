@@ -11,6 +11,7 @@ const LogOut=()=>{
   }
   
 return<div>
+  <h2>sdf</h2>
       <GoogleLogout
       clientId={clientId}
       buttonText="Logout"

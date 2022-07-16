@@ -1,4 +1,4 @@
-import React, { useRef,useEffect, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect } from "react";
 import C from './Coin.module.css'
 
 import { NavLink } from "react-router-dom";
@@ -24,10 +24,9 @@ const CoinItem =({
                     
         }
     },[Items,lang])
- console.log(Items);
     if(Items==='') return  spiner('loading')
     //description/image.small/name/id/market_data.high_24h.usd
-const whatLang= Items.description
+
     return <div className={C.card}>
         <button className={C.cardClose} onClick={()=>Delete(Items.id)}>X</button>
         <div className={C.card_header}>

@@ -22,6 +22,7 @@ export const spiner =(key,style)=>{
         }} alt="loading" src="https://c.tenor.com/G9LwLc5rCEIAAAAC/signs-infinity.gif"/>
         case 'notFound': 
         return<img  alt="notFound" src="https://cdn.dribbble.com/users/308895/screenshots/2598725/no-results.gif"/>
+        default:
     }
    
 }

@@ -8,12 +8,6 @@ import localforage from "localforage"
 // }
 
 
-const lang = localforage.createInstance({ name: 'lang' })
-
-export const lfLang ={
-    getItem:()=> lang.getItem('lang'),
-    setItem:(elem)=>lang.setItem('lang',elem),
-}
 const coin = localforage.createInstance({ name: 'coin' })
 
 export const lfCoin ={

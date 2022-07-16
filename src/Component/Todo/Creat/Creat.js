@@ -1,6 +1,6 @@
 import { t } from "i18next";
 import React from "react";
-import C from './Creat.module.css'
+import C from '../todo.module.css'
 
 const Creat =({
     addNewTodo,

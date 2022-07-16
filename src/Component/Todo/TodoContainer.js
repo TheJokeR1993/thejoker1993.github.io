@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Todo from "./Todo"
 import {
     getTODOLocalForage, 
@@ -10,10 +10,8 @@ import {
     R_F_change_name_packed,
     R_F_clear_err
 } from '../../redux/reducerTodo/reducerTodo'
-import {R_F_change_text_for_component} from '../../redux/language/language'
 import { connect } from "react-redux";
-import { t } from "i18next";
-
+import {spiner} from '../../helps/spiner'
 
 const mapStateToProps = (state)=>{
   
@@ -27,18 +25,21 @@ const mapStateToProps = (state)=>{
 
 
 const TodoContainer = props =>{
- 
-
-useEffect(()=>{
- 
-    props.getTODOLocalForage()
   
+ const getTODO = ()=> props.getTODOLocalForage()
 
-},[])
+useEffect(getTODO,[])
+console.log( props.isLoadingh);
  
+return <div>{
+    props.todo.length === 0
+     ?spiner('loading')
+     : <Todo {...props}/>
+    
+    }</div>
 
-return <Todo {...props}/>
 }
+
 
 
 export default connect(mapStateToProps,{

@@ -39,14 +39,16 @@ const T = {
 
 
 
-const reducerTodo = (state = { todo: list, input: '', Error: '' }, action) => {
+const reducerTodo = (state = { todo: [], input: '', Error: '',isLoading :  true }, action) => {
   switch (action.type) {
 
     case T.ADD_NEW_PACKED:
       return (!what_error(state.input, state.todo))
         ? { todo: [...state.todo, { value: state.input, id: id(), packed: false, filter: false }], input: '', Error: '' }
         : { ...state, Error: what_error(state.input, state.todo) }
-    case T.DELETE_PACKED: return { ...state, todo: state.todo.filter(i => i.id !== action.id) }
+    case T.DELETE_PACKED: 
+    //?
+    return { ...state, todo: state.todo.filter(i => i.id !== action.id) }
     case T.CHANGE_STATE:  return action.state 
     case T.CHANGE_NAME_PACKED:
       return (!what_error(action.value, state.todo))
@@ -86,7 +88,8 @@ const R_F_change_state = (state) => ({ state, type: T.CHANGE_STATE })
 
 export const getTODOLocalForage = () => (dispatch) => {
   lfTodo.getItem().then(item => {
-    return item!==null && dispatch(R_F_change_state(item))
+   
+     dispatch(R_F_change_state(item == null ? list : item))
   }
   )
 }

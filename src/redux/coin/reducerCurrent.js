@@ -24,9 +24,11 @@ const currentEl = {
 const current = (state = currentEl, action) => {
 
     switch (action.type) {
-        case T.CURRENT_FIRST: return { ...state, item: action.item }
+        case T.CURRENT_FIRST: 
+            return { ...state, item: action.item }
+       
         case T.CHART: return { ...state,chart: action.item}
-        case T.CHANGE_DATA :  
+        case T.CHANGE_DATA :
             let obj={...state.data}
           if (action.name === 'to') {
               if(action.value > state.data.from){
@@ -53,7 +55,7 @@ const current = (state = currentEl, action) => {
 export const R_F_change_date = (value,name) => ({ value,name, type: T.CHANGE_DATA })
 
 
-const first = (item) => ({ item, type: T.CURRENT_FIRST })
+const first = (item) => ({   item, type: T.CURRENT_FIRST })
 const chart = (item) => ({ item, type: T.CHART })
 
 
@@ -72,7 +74,8 @@ export const R_F_chart=(id,data)=>(dispatch)=>{
 export const R_F_current_first = (id) => (dispatch) => {
     lfCurrent.getItem()
         .then(item =>{
-         if(item === null||item.item.id !==id) {
+            if(item === null||item.item.id !==id) {
+             console.log(item);
             api_coin.currentCoin(id)
             .then(cur => {
                 lfCurrent.setItem({'item':cur,'data':currentEl.data})

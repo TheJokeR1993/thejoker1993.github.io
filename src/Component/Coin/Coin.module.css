@@ -1,30 +1,61 @@
+
+
+
 .main{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 5vh;
+    min-width: 100%;
+    min-height: 100vh;
+    background:oldlace;
+    position: relative;
     
 }
+.mainImg_close{
+    position: absolute;
+    top:7vh;left:15px;
+    width:50px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.3;
+    z-index: 3;
+}
+.mainImg_open{
+    position: fixed;
+    top:6vh;left:10px;
+    border-radius: 10px;
+    width:50px;
+    height: 40px;
+    cursor: pointer;
+    opacity: 0.3;
+    z-index: 3;
+}
 .mainLeft{
-    height: 95vw;
+    height: 90%;
+    padding-top: 10px;
+    width: 40%;
     text-align: center;
     margin: 10px auto;
    position: fixed;
    top: 5vh;
-   width: 50%;
-    border-right: 2px solid black;
+   left: 10px;
+    border:2px solid black;
+    box-shadow: 0 0 5px black;
+    border-radius: 10px;
+    background: rgb(243, 250, 236);
+    overflow: hidden;
 
 }
-.mainInput{
-    height: 5vh;
-    margin: 0 auto;
-    text-align: center;
-    
+.main img:hover{
+     opacity: 1;
+}
+.none{
+    display: none;
 }
 .mainInput input{
     width: 70%;
     padding: 4px 0;
     text-align: center;
     font-size: 20px;
+    border-radius: 10px;
 }
 .error_div{
     margin-bottom: 10px;
@@ -38,12 +69,30 @@
     background: red;
 }
 .mainAllRezult{
-    height: 83vh;
+    height: 85%;
     overflow-y: auto;
 }
+.mainAllRezult::-webkit-scrollbar {
+    width: 13px;   
+                /* ширина всей полосы прокрутки */
+  }
+  
+  .mainAllRezult::-webkit-scrollbar-track {
+    background: rgba(114, 114, 113, 0.392) ;
+    border-radius: 10px;
+         /* цвет зоны отслеживания */
+  }
+  
+  .mainAllRezult::-webkit-scrollbar-thumb {
+    cursor: pointer;
+    background-color: rgb(243, 250, 236);    /* цвет бегунка */
+    border-radius: 20px; 
+    border: 1px solid black;      /* округлось бегунка */
+      /* отступ вокруг бегунка */
+  }
 .mainAllRezult img{
-    height: 75vh;
-    width: 50vw;
+    height: 95%;
+    width: 100%;
     
 }
 .mainAllRezult p{
@@ -59,20 +108,24 @@
 
 .rezult{
     width: 100%;
-    display: flex;   
+    display: flex;
+   
 }
 .rezultLeft{
-    width: 50%;
+    width: 42%;
 }
 .rezult_div{
-    width: 50%;
+    width: 58%;
+}
+.rezult_div_open{
+    width: 100%;
 }
 .rezultItem{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 10px 0;
-    margin-top: 5vh;
+    margin-top: 12vh;
 }
 .rezult_menu{
     position: fixed;
@@ -81,9 +134,27 @@
     display: flex;
     align-items: center;
     z-index: 2;
-    width: 50%;
+    width: 58%;
     height:7vh;
     background-color: #333167;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+   
+}
+.rezult_menu_open{
+    position: fixed;
+    top:5vh;
+    padding:0 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    width: 95%;
+    height:7vh;
+    background-color: #333167;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
    
 }
 
@@ -152,7 +223,7 @@
     border: 2px solid black;
     padding: 10px;
     width:220px;
-    
+    background:gainsboro;
     box-shadow: 0px 0px 9px black;
     border-radius: 10px;
     margin: 10px;
@@ -161,6 +232,8 @@
     justify-content: space-between;
     flex-direction: column;
 }
+
+
 .cardClose{
     position: absolute;
     top:-2px;right: -1px;
@@ -191,13 +264,7 @@
     height: 90px;
     margin-bottom: 10px;
 }
-/* .card_header h2{
-    
-    margin: 0;
-    text-align: center;
-    margin-right: 0px 5px;
-    overflow: hidden;
-} */
+
 .cardMain{
     display: flex;
     flex-direction: column;
@@ -273,3 +340,65 @@
   border-radius: 10px;
 }
 
+.cardMain p::-webkit-scrollbar {
+    width: 12px;               /* ширина всей полосы прокрутки */
+  }
+  
+  .cardMain p::-webkit-scrollbar-track {
+    background: gainsboro;        /* цвет зоны отслеживания */
+  }
+  
+  .cardMain p::-webkit-scrollbar-thumb {
+    background-color: rgb(157, 157, 157);    /* цвет бегунка */
+    border-radius: 20px;       /* округлось бегунка */
+  }
+
+  @media only screen and (max-width: 920px) {
+    .mainLeft{
+        width: 95%;
+        height: 40vh;
+    }
+    .rezult{
+        flex-direction: column;
+
+    }
+    .rezultLeft{
+        height: 45vh;
+    }
+    .rezult_menu{
+        margin-top: 45vh;
+        width: 100%;
+        left: 0;
+        border-radius: 10px;
+        background:grey;
+    }
+    .rezult_div_open{
+        margin-top: 5vh;
+    }
+    .rezultLeft{
+        height: 52vh;
+    }
+    .rezult_div{
+        width: 100%;
+        overflow-y: auto;
+        height: 50vh;
+    }
+    .rezultItem {
+        margin-top:6vh;
+        
+    }
+    .cardMain p{
+        display:none;
+    }
+    .sort_div button:nth-child(1){
+        display: none;
+    }
+    .sort_div button:nth-child(2){
+       border-top-left-radius: 10px;
+       border-bottom-left-radius: 10px;
+    }
+    .mainImg_close{
+        top: 7vh;
+    }
+ 
+}

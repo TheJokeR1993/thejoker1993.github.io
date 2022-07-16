@@ -29,14 +29,11 @@ export const getDateFromTo = (arg)=>{
     // }
 }
 
-const unixDate = d => (d+"").slice(0,10)
+export const unixDate = d => (d+"").slice(0,10)
 export const  getDateUNIX = ({from,to})=>{
-    // console.log(from);
-    // if(from>to){
-    //     {to,from}
-    // }
     from =unixDate(new Date(from).getTime());
     to =  unixDate(new Date(to).getTime());
+    
     if(from>to){
         let newDate= from
         from=to

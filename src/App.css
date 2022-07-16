@@ -38,3 +38,25 @@
   }
 }
 
+
+/* flex */
+
+.flex {
+  display: flex;
+}
+.flecC { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* bg */
+.bgGreen {
+background: rgb(63, 45, 59);
+width: 80%;
+height: 80%;
+top: 10vh;
+left: 10vw;
+position: fixed;
+
+}

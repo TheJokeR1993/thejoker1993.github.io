@@ -1,0 +1,113 @@
+.container{
+    width: 100%;
+}
+.header{
+    padding:20px 0px;
+    width: 100%;
+    font-size: 30px;
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+.header_inp{
+    width: 200px;
+    margin-right: 30px;
+    border: 3px solid black;
+    padding: 3px;
+    text-align: center;
+    
+}
+
+.error_div{
+    background: red;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px black;
+}
+
+.header_btn{
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: rgb(199, 198, 199);
+    border-radius: 7px;
+    font-weight: 600;
+    min-width: 95px;
+    text-transform: uppercase;
+}
+
+.div_rezult{
+    width:90%;
+    margin: 0 auto 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px black;
+    padding: 0;
+   display: flex;
+   
+   
+}
+
+.rezult_block{
+    width: 50%;
+    box-shadow: 0px 0px 3px black;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 204);
+    display: flex;
+    flex-direction: column;
+
+}
+
+.rezult_block h2 {
+    margin: 0 0 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.rezult_block:nth-child(2){
+    background-color: rgb(127, 238, 154);
+}
+
+.form{
+    display: flex;
+    align-items: center;
+   justify-content: space-around;
+    border-bottom: 2px solid black;
+   margin-bottom: 10px;
+}
+
+.form input{
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+}
+.form:hover{
+    box-shadow: 0px 0px 8px black;
+    border-radius:5px;
+    
+
+}
+
+.form button {
+    cursor: pointer;
+    background-color: rgb(253, 77, 77);
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 3px 9px;
+    text-transform: uppercase;  
+}
+.name{
+    text-align: center;
+    width: 60%;
+   white-space: normal;
+    
+}
+.form  input[type='text']{
+    width:60%;
+    text-align: center;
+    
+}

@@ -1,7 +1,6 @@
 import { t } from "i18next";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import { connect } from "react-redux";
-import { getDateFromTo, getDateUNIX } from '../../helps/date'
 import { spiner } from "../../helps/spiner";
 import  { R_F_current_first,
     R_F_chart,
@@ -10,7 +9,7 @@ import  { R_F_current_first,
 
 import ChartCf from "./ChartCf";
 import C from './Coin.module.css'
-// const language = 'en'
+
 
 
 const mapStateToProps =(state)=>{
@@ -21,50 +20,32 @@ const mapStateToProps =(state)=>{
     
 }
 
-// const d = getDateFromTo()
-// const dateInput = {
-//     to: d.to,
-//     from: d.from
-// }
-
-
 
 const CurrentCoin = (props) => {
-    
+    // console.log(props.current);
     let widthChart = (window.innerWidth) * 0.8 - 50 + ''
-    // const [value, setValue] = useState(dateInput)
     const textDescription = useRef(null)
+
+    useEffect(() => {
+        props.R_F_chart(props.match.params.id,props.current.data)
+    //  console.log(11);
+       
+     }, [props.current.data])
+
     useEffect(() => {
        props.R_F_current_first(props.match.params.id)
        props.R_F_chart(props.match.params.id,props.current.data)
        if (textDescription.current) {
-           console.log(!textDescription.current.innerHTML);
-                if( !textDescription.current.innerHTML ){
-                    textDescription.current.innerHTML = t('Coin_info')
+          
+                if(props.current.item.description['en']!==''){
+                    textDescription.current.innerHTML = props.current.item.description['en']
             }else{
-                textDescription.current.innerHTML = props.current.item.description['en']
-               }
+                textDescription.current.innerHTML = t('NoPrice')
             }
-    }, [textDescription.current,props.lang])
+            }
+    }, [textDescription.current])
 
-console.log(19);
-useEffect(() => {
-    props.R_F_chart(props.match.params.id,props.current.data)
- 
    
- }, [props.current.data])
-    // const change = e => {
-    //     if (e.target.name === 'to') {
-    //         e.target.value > value.from
-    //             ? setValue({ ...value, to: e.target.value })
-    //             : setValue({ to: value.from, from: e.target.value })
-    //     } else {
-    //         e.target.value < value.to
-    //             ? setValue({ ...value, from: e.target.value })
-    //             : setValue({ to: e.target.value, from: value.to })
-    //     }
-    // }
-
     
     if (!props.current.item.id) return <div>loading...</div>
 
@@ -79,15 +60,12 @@ useEffect(() => {
         }
     }
 
-    console.log(!info.market_data.current_price.usd);
-//   console.log(info.image.small.slice(0,4)==='http');
     return <div className={C.currentItem}>
         <div className={C.itemDiv}>
             <h2>{info.name}</h2>
             {criticalPrice(info.market_data.current_price.usd,info.market_data.price_change_24h_in_currency.usd)}
-            {/* <h3>Price: <b className={C.blue}>${info.market_data.current_price.usd}</b>({criticalPrice(info.market_data.price_change_24h_in_currency.usd)})</h3> */}
             <img alt='' src={info.image.small.slice(0,4)==='http'?info.image.large:'https://filmnavi.ru/images/movie_no_image.jpg'} />
-            <p ref={textDescription}></p>
+            <p ref={textDescription}> </p>
         </div>
         {!info.market_data.current_price.usd
         ?''

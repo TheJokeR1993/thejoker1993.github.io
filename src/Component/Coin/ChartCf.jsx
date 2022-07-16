@@ -1,6 +1,6 @@
 import React from 'react';
 import {getUnixfoDate}from '../../helps/date'
-import C from './Coin.module.css'
+
 
 import {
   Chart as ChartJS,
@@ -13,7 +13,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import { spiner } from '../../helps/spiner';
+
 
 ChartJS.register(
   CategoryScale,
