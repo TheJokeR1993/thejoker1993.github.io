@@ -4,8 +4,6 @@ import CurrentCoin from './Coin/CurrentCoin'
 import TodoContainer from "./Todo/TodoContainer";
 import ContainerCoin from "./Coin/ContainerCoin";
 const Main_component =()=>{
-  
-  console.log('11');
     return <Switch>
 
     

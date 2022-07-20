@@ -38,7 +38,6 @@ const language = (state = lang, action) => {
 
 export const get_lang = () => (dispatch) => {
     const lanqu = localStorage.getItem('i18nextLng')
- console.log(lanqu);
     if (lanqu === null) {
         axios.get('https://api.ipregistry.co/?key=tryout')
             .then(respon => respon.status === 200 ? respon.data : Promise.reject(respon))

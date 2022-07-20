@@ -13,8 +13,6 @@ import { changeLang } from "../../redux/language/language";
 
 const Header = (props) => {
 
-console.log(t('cryptocurrency'));
-
    
     const lang_D = ['en', 'ru', 'uk']
 

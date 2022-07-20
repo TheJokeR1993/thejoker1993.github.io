@@ -9,7 +9,7 @@
     
 }
 .mainImg_close{
-    position: absolute;
+    position: fixed;
     top:7vh;left:15px;
     width:50px;
     height: 40px;
@@ -20,7 +20,7 @@
 }
 .mainImg_open{
     position: fixed;
-    top:6vh;left:10px;
+    top:5.5vh;left:10px;
     border-radius: 10px;
     width:50px;
     height: 40px;
@@ -367,7 +367,8 @@
     }
     .rezult_menu{
         margin-top: 45vh;
-        width: 100%;
+        margin-left:1vw;
+        width: 98%;
         left: 0;
         border-radius: 10px;
         background:grey;
@@ -387,7 +388,7 @@
         margin-top:6vh;
         
     }
-    .cardMain p{
+    .cardMain p,.cardMain h2{
         display:none;
     }
     .sort_div button:nth-child(1){
@@ -397,8 +398,22 @@
        border-top-left-radius: 10px;
        border-bottom-left-radius: 10px;
     }
-    .mainImg_close{
-        top: 7vh;
+    
+}
+
+@media only screen and (max-width: 520px) {
+    .rezult_menu_open{
+        padding: 0 30px;
     }
- 
+    .mainImg_close{
+        top: 9vh;
+        width:35px;
+        height: 25px;
+    }
+    .mainImg_open{
+        top:6.5vh;
+        width:35px;
+        height: 25px;
+    }
+
 }

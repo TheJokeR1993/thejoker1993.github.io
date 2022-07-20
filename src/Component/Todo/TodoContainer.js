@@ -8,7 +8,8 @@ import {
     R_F_add_new_packed,
     R_F_delete_packed,
     R_F_change_name_packed,
-    R_F_clear_err
+    R_F_clear_err,
+    R_F_loading
 } from '../../redux/reducerTodo/reducerTodo'
 import { connect } from "react-redux";
 import {spiner} from '../../helps/spiner'
@@ -19,25 +20,25 @@ const mapStateToProps = (state)=>{
            todo : state.todo.todo,
            input:state.todo.input,
            Error:state.todo.Error,
+           isLoading:state.todo.isLoading
        }
    }
 
 
 
 const TodoContainer = props =>{
-  
- const getTODO = ()=> props.getTODOLocalForage()
 
-useEffect(getTODO,[])
-console.log( props.isLoadingh);
+useEffect(()=>{
+    props.getTODOLocalForage()
+   
+},[props.isLoading])
  
 return <div>{
-    props.todo.length === 0
-     ?spiner('loading')
+    props.isLoading
+     ?spiner('first')
      : <Todo {...props}/>
     
     }</div>
-
 }
 
 
@@ -49,5 +50,6 @@ export default connect(mapStateToProps,{
     R_F_change_packed,
     R_F_change_input,
     R_F_delete_packed,
-    R_F_clear_err
+    R_F_clear_err,
+    R_F_loading
 })(TodoContainer)

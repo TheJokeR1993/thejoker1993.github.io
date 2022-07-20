@@ -2,7 +2,7 @@
     width: 100%;
 }
 .header{
-    padding:20px 0px;
+    padding:20px 10px;
     width: 100%;
     font-size: 30px;
     margin-top: 5vh;
@@ -39,19 +39,19 @@
 }
 
 .div_rezult{
-    width:90%;
+    width:95%;
     margin: 0 auto 10px;
     border: 3px solid black;
     border-radius: 10px;
     box-shadow: 0px 0px 10px black;
     padding: 0;
    display: flex;
-   
+   justify-content: space-around;
    
 }
 
 .rezult_block{
-    width: 50%;
+    width: 100%;
     box-shadow: 0px 0px 3px black;
     margin: 10px;
     padding: 15px;
@@ -110,4 +110,25 @@
     width:60%;
     text-align: center;
     
+}
+
+@media only screen and (max-width: 700px) {
+    .div_rezult{
+        display: flex;
+       flex-direction: column;
+    }
+    .rezult_block{
+        width: auto;
+    }
+    .header{
+        flex-direction: column;
+        align-items: center;
+    }
+    .header_inp{
+        width: 85%;
+        margin-bottom: 10px;
+    }
+    .header_btn{
+        min-width: 100px;
+    }
 }

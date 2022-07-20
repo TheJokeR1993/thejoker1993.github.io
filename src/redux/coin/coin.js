@@ -45,7 +45,6 @@ const coin = (state = dataCoin, action) => {
                 allIdchange: state.allIdchange.filter(item => item.id !== action.id)}
 
         case T.CHANGE_INPUT_API:
-            console.log(action.str);
             if (!errCoin(action.str)) {
                 return { ...state, errInp: '', 
                 inp: action.str, 
@@ -64,8 +63,10 @@ const coin = (state = dataCoin, action) => {
             
             if(action.str==='class'){
                 return {...state,allIdchange: state.allId , sort:'class'}
+            }else{
+                  return{ ...state, allIdchange : action.arr, sort : action.str }
             }
-            return{ ...state, allIdchange : action.arr, sort : action.str }
+          
         
                 
         default: return state
